@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+header{
+  margin-top: 30px;
+  color: #43A047;
+}
+hr{
+  border-width: 3px;
+  border-color: #43A047;
+}
+h1{
+  font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+  text-align: center;
+}
+#form{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+input:required{
+  background: #ffcdd2;
+}
+input:valid{
+  background: transparent;
+}
+input:focus{
+  background: #DCEDC8;
+}
+
+.sample-box-1 {
+  border: 2px solid #da4033;
+  border-radius: 4px;
+  margin: 2em 0;
+  padding: 2em;
+  position: relative;
+  width: 60%;
+  margin-right: 0;
+}
+.sample-box-1::before {
+  background-color: #fff;
+  color: #da4033;
+  content: "SCRIPT";
+  font-weight: bold;
+  left: 1em;
+  padding: 0 .5em;
+  position: absolute;
+  margin-right: 0;
+  top: -1em;
+}
+.sample-box-2 {
+  border: 2px solid #da4033;
+  border-radius: 4px;
+  margin: 2em 0;
+  padding: 2em;
+  position: relative;
+  width: 60%;
+}
+.sample-box-2::before {
+  background-color: #fff;
+  color: #da4033;
+  content: "BODY";
+  font-weight: bold;
+  left: 1em;
+  padding: 0 .5em;
+  position: absolute;
+  top: -1em;
+}
+.click{
+  width: 40%;
+}
+.tag{
+  width: 100%;
+  display: flex;
+}
