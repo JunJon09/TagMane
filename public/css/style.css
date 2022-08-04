@@ -10,8 +10,8 @@ hr{
 }
 h1{
   font-size: 25px;
-    font-weight: bold;
-    margin: 0;
+  font-weight: bold;
+  margin: 0;
   text-align: center;
 }
 #form{
@@ -35,13 +35,13 @@ input:focus{
   margin: 2em 0;
   padding: 2em;
   position: relative;
-  width: 60%;
+  width: 40%;
   margin-right: 0;
 }
 .sample-box-1::before {
   background-color: #fff;
   color: #da4033;
-  content: "SCRIPT";
+  content: "HEAD";
   font-weight: bold;
   left: 1em;
   padding: 0 .5em;
@@ -55,7 +55,7 @@ input:focus{
   margin: 2em 0;
   padding: 2em;
   position: relative;
-  width: 60%;
+  width: 40%;
 }
 .sample-box-2::before {
   background-color: #fff;
@@ -66,11 +66,68 @@ input:focus{
   padding: 0 .5em;
   position: absolute;
   top: -1em;
+
+
 }
+.view-count {
+  border: 2px solid #da4033;
+  border-radius: 4px;
+  margin: 2em 0;
+  padding: 2em;
+  position: relative;
+  width: 60%;
+}
+.view-count::before {
+  background-color: #fff;
+  color: #da4033;
+  content: "ViewCount";
+  font-weight: bold;
+  left: 1em;
+  padding: 0 .5em;
+  position: absolute;
+  top: -1em;
+}
+.click-trigger {
+  border: 2px solid #da4033;
+  border-radius: 4px;
+  margin: 2em 0;
+  padding: 2em;
+  position: relative;
+  width: 60%;
+}
+.click-trigger::before {
+  background-color: #fff;
+  color: #da4033;
+  content: "ClickCount";
+  font-weight: bold;
+  left: 1em;
+  padding: 0 .5em;
+  position: absolute;
+  top: -1em;
+}
+
+
 .click{
   width: 40%;
 }
 .tag{
   width: 100%;
   display: flex;
+  justify-content: center;
+}
+button {
+	display: block;
+	width: 160px;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: #EC407A;
+	border: 2px solid #EC407A;
+	border-radius: 3px;
+	transition: .4s;
+  margin: 50px 100px;
+}
+button:hover {
+	background: #EC407A;
+	color: #fff;
 }

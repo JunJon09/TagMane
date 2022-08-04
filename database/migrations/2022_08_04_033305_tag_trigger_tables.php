@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tag_registrations', function (Blueprint $table) {
+        Schema::create('tag_triggers', function (Blueprint $table) {
             $table->id();
-            $table->text('many_text')->nullable();
-            $table->string('url_text');
+            $table->bigInteger('user_id');
+            $table->bigInteger('view_count');
+            $table->bigInteger('click_count');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('tag_registrations');
+
         });
     }
 
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tag_registrations');
+        Schema::dropIfExists('tag_triggers');
     }
 };

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagRegistrationController;
 use App\Http\Controllers\TagPublishController;
+use App\Http\Controllers\TagViewTriggerController;
+use App\Http\Controllers\TagRedirectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +34,15 @@ Route::post('/TagRegistration', [TagRegistrationController::class, 'index']);
 
 #一人一人のタグのデータ
 Route::get('/tag/{id}', [TagPublishController::class, 'index']);
+
+#ページViewトリガーのカウント
+Route::get('/tag/{id}/trigger', [TagViewTriggerController::class, 'TriggerCount']);
+
+#ページViewトリガーのカウント画面
+Route::get('/tag/{id}/trigger/view', [TagViewTriggerController::class, 'ViewCount']);
+
+Route::get('/tag/{id}/redirect', [TagRedirectController::class, 'index']);
+
+
+
+

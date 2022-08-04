@@ -8,9 +8,11 @@ class TagPublishController extends Controller
 {
     public function index($id){
         $tag = TagRegistration::find($id);
+        $url = "http://localhost/tag/" . $id . '/redirect';
         return view('TagView')->with([
-            'text'=>$tag->self_introduction_text,
-            'url'=>$tag->url_text,
+            'text'=>$tag->many_text,
+            'url'=>$url,
+            'id' =>$id,
         ]);
     }
 }

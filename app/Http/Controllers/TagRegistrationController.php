@@ -8,10 +8,11 @@ class TagRegistrationController extends Controller
 {
     public function index(Request $request) {
         $tag = new TagRegistration();
-        $tag->self_introduction_text = $request->self_introduction_text;
+        $tag->many_text = $request->many_text;
         $tag->url_text = $request->url_text;
         $tag->save();
         $id = $tag->id;
+        
         return view('TagPublish')->with('id', $id);
     }
 }

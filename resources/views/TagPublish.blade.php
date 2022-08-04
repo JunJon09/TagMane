@@ -5,38 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- ↓クリップボード操作のために使用するjsを読み込む　( https://clipboardjs.com/ ) -->
-    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
-    
-    <script>
-    var clipboard = new Clipboard('#copyTarget');    //clipboard.min.jsが動作する要素をクラス名で指定
-    
-    //クリックしたときの挙動
-    $(function(){
-        $('#copyTarget').click(function(){
-            $(this).addClass('copied');    //ボタンの色などを変更するためにクラスを追加
-            $(this).text('コピーしました');    //テキストの書き換え
-        });
-    });
     <title>タグ発行画面</title>
+    <!-- コピーの実装 -->
+    <script>
+        function copy($id) {
+            // ↓ Rangeオブジェクト作成
+            let range = document.createRange();
+            // ↓ コピーする要素を取得
+            let copyTarget = document.getElementById($id);
+            // ↓ #copyの要素全体を選択
+            range.selectNodeContents(copyTarget);
+            // ↓ 選択した要素(ノード)の文字列を取得(selectionオブジェクトを取得)
+            let selection = document.getSelection();
+            // ↓ 選択した範囲を解除(これがないと次のaddRangeが上手く動かない)
+            selection.removeAllRanges();
+            // ↓ selectionオブジェクトにrangeオブジェクトを追加
+            selection.addRange(range);
+
+            document.execCommand("copy");// クリップボードにコピー
+            selection.removeAllRanges();// テキスト選択を解除
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <header>
            <div class="row">
-                    <h1>タグ発行</h1>
+                <h1>タグ発行</h1>
             </div>
         </header>
     </div>
     <hr>
     <div class="tag">
-        <div class="sample-box-1" id="copyTarget"><p>http://localhost/tag/{{$id}}</p></div>
-        <div class="click"><button onclick="copyToClipboard()">Copy text</button></div>    
+        <div class="sample-box-1" id="copy_tag">&lt;script src="http://localhost/tag/{{$id}}"&gt;&lt;/script&gt;</div>
+        <div class="click"><button onclick="copy('copy_tag')">Copy</button></div>    
     </div>
     <div class="tag">
-        <div class="sample-box-2">&lt;div id="TagMane"&gt;&lt;/div&gt;</div>
-        <div class="click" id="copyTarget"><button onclick="copyToClipboard()">Copy text</button></div>
+        <div class="sample-box-2" id="copy_url">&lt;div id="TagMane"&gt;&lt;/div&gt;</div>
+        <div class="click"><button onclick="copy('copy_url')">Copy</button></div>
     </div>
 
 </body>
