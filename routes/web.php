@@ -5,6 +5,7 @@ use App\Http\Controllers\TagRegistrationController;
 use App\Http\Controllers\TagPublishController;
 use App\Http\Controllers\TagViewTriggerController;
 use App\Http\Controllers\TagRedirectController;
+use App\Http\Controllers\TagJSErrorTrigerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,7 @@ use App\Http\Controllers\TagRedirectController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('TagRegistrationView');
 });
 
 // Route::get('/ta', function () {
@@ -42,6 +43,9 @@ Route::get('/tag/{id}/trigger', [TagViewTriggerController::class, 'TriggerCount'
 Route::get('/tag/{id}/trigger/view', [TagViewTriggerController::class, 'ViewCount']);
 
 Route::get('/tag/{id}/redirect', [TagRedirectController::class, 'index']);
+
+Route::get('/tag/{id}/js/error', [TagJSErrorTrigerController::class, 'errorJudge']);
+Route::get('/tag/{id}/js/true', [TagJSErrorTrigerController::class, 'trueJudge']);
 
 
 

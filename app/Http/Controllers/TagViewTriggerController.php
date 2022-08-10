@@ -40,17 +40,29 @@ class TagViewTriggerController extends Controller
         $DB_TT = new TagTrigger();
         $view_count = 0;
         $click_count = 0;
-
+        $message = "";
         if ($DB_TT::where('user_id', '=', $id)->exists()){
             $tag = $DB_TT::where('user_id', $id)->first();
             $view_count = $tag->view_count;
             $click_count = $tag->click_count;
+            $flag = $tag->js_error;
+            if ($flag !== null){
+                if ($flag == 0){
+                    $message = "正常に動いています。";
+                }else if ($flag == 1){
+                    $message = "エラーが発生しています。";
+                }
+            }else{ //NULLの時
+                $message = "まだ見られてないのでわかりません。";
+            }
+            
         }
 
         return view('TagTriggerCountView')->with([
             'id'=>$id,
             'view_count'=>$view_count,
             'click_count'=>$click_count,
+            'message'=>$message,
         ]);
     }
 }

@@ -21,7 +21,7 @@
             <div class="form-group">    
                 @csrf
                 <div class="data">
-                    <p>テキスト<textarea name="many_text" rows="4" cols="40">cols="40"のテキストエリアです。</textarea>
+                    <p>テキスト<textarea name="many_text" rows="4" cols="40"></textarea>
                 </div>
                 <div class="data">
                     <p>URL <input type="url" name="url_text" required></p>

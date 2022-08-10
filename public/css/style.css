@@ -105,7 +105,25 @@ input:focus{
   position: absolute;
   top: -1em;
 }
+.js-trigger{
+  border: 2px solid #da4033;
+  border-radius: 4px;
+  margin: 2em 0;
+  padding: 2em;
+  position: relative;
+  width: 60%;
+}
 
+.js-trigger::before{
+  background-color: #fff;
+  color: #da4033;
+  content: "エラートリガ";
+  font-weight: bold;
+  left: 1em;
+  padding: 0 .5em;
+  position: absolute;
+  top: -1em;
+}
 
 .click{
   width: 40%;

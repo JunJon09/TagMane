@@ -18,9 +18,8 @@ return new class extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('view_count');
             $table->bigInteger('click_count');
+            $table->bigInteger('js_error')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('tag_registrations');
-
         });
     }
 

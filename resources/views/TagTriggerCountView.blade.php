@@ -23,6 +23,10 @@
     <div class="tag">
         <div class="click-trigger"><p>クリックされた回数は{{$click_count}}回です。</p></div>
     </div>
+    <div class="tag">
+        <div class="js-trigger"><p>{{$message}}</p></div>
+    </div>
+    
    
     
 </body>
