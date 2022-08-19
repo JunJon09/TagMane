@@ -14,20 +14,6 @@ h1{
   margin: 0;
   text-align: center;
 }
-#form{
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-}
-input:required{
-  background: #ffcdd2;
-}
-input:valid{
-  background: transparent;
-}
-input:focus{
-  background: #DCEDC8;
-}
 
 .sample-box-1 {
   border: 2px solid #da4033;

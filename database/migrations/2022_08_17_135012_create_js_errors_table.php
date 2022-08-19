@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tag_triggers', function (Blueprint $table) {
+        Schema::create('js_errors', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->bigInteger('view_count');
-            $table->bigInteger('click_count');
-            $table->bigInteger('js_error')->nullable();
+            $table->bigInteger('registrations_id');
+            $table->bigInteger('boxes_id');
+            $table->bigInteger('url_js');
+            $table->bigInteger('headline_js');
+            $table->bigInteger('subtitle_js');
+            $table->bigInteger('img_js');
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tag_triggers');
+        Schema::dropIfExists('js_errors');
     }
 };

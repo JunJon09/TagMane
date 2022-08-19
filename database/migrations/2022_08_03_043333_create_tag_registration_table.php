@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('tag_registrations', function (Blueprint $table) {
             $table->id();
-            $table->text('many_text')->nullable();
-            $table->string('url_text');
+            $table->bigInteger('user_id');
+            $table->bigInteger('style_number');
             $table->timestamps();
         });
     }

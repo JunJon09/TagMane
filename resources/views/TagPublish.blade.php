@@ -32,6 +32,8 @@
         <header>
            <div class="row">
                 <h1>タグ発行</h1>
+                <a href="http://localhost/logout">ログアウト</a>
+                <a href="http://localhost/dashboard">トップページ</a>
             </div>
         </header>
     </div>

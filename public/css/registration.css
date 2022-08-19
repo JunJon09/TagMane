@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+header{
+  margin-top: 30px;
+  color: #43A047;
+}
+hr{
+    border-width: 3px;
+    border-color: #43A047;
+  }
+h1{
+font-size: 25px;
+font-weight: bold;
+margin: 0;
+text-align: center;
+}
+
+table{
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+input[type="submit"],
+input[type="text"],
+input[type="url"],
+input[type="file"],
+select,
+textarea,
+button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  background: rgb(240, 234, 234);
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  background: #e9f5fb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+textarea[name="content"] {
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #ccc;
+}
+ 
+::-webkit-input-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+ 
+::-moz-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+ 
+:-ms-input-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+ 
+.form-table {
+  width: 100%;
+}
+ 
+.form-table th,
+.form-table td {
+  border-top: 1px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
+  padding: 20px;
+}
+ 
+.form-table th {
+  background: #ffecea;
+  padding-left: 50px;
+  position: relative;
+  text-align: left;
+  width: 300px;
+}
+tbody .number{
+    background:green;
+}
+
+input[type="submit"],
+input[type="text"],
+input[type="url"],
+input[type="file"]{
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+}
+
