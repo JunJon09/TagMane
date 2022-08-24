@@ -29,10 +29,10 @@ Route::get('/', function () {
 // Route::get('/dashboard', function () {
 //     return view('MypageView');
 // })->middleware(['auth']);
-Route::get('/dashboard', [MypageController::class, 'index'])->middleware(['auth']);
-Route::get('/TagRegistration', function () {
-    return view('TagRegistrationView');
-})->middleware(['auth']);
+Route::get('/dashboard', [MypageController::class, 'index'])->middleware(['auth']) 
+        ->name('dashboard');
+Route::get('/TagRegistration', [TagRegistrationController::class, 'view'])->middleware(['auth'])
+        ->name('tagRegister');
 //タグデータをDBに登録
 Route::post('/TagRegistration', [TagRegistrationController::class, 'index'])->middleware(['auth']);
 

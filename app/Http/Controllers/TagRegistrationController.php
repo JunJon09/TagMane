@@ -13,6 +13,7 @@ class TagRegistrationController extends Controller
         $TR = new TagRegistration();
         $TB = new TagBox();
         $user = Auth::user();
+        $name = $user->name;
         $TR->user_id = $user->id;
         $TR->style_number = $request->style_select;
         $TR->save();
@@ -31,6 +32,11 @@ class TagRegistrationController extends Controller
         }
     
         
-        return view('TagPublish')->with('id', $TR_count);
+        return view('TagPublish', compact('name', 'TR_count'));
+    }
+    public function view() {
+        $user = Auth::user();
+        $name = $user->name;
+        return view('TagRegistrationView', compact('name'));
     }
 }
