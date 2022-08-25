@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\TagBox;
 use App\Models\TagRegistration;
+use App\Models\TagView;
 class TagPublishController extends Controller
 {
     public function index($id){
@@ -14,6 +15,18 @@ class TagPublishController extends Controller
         $text = "";
         $text = $text . "<ul>";
         for ($i=0; $i<count($TB); $i++){
+            $TV = new TagView();
+            if ($TV::where('boxes_id', '=', $TB[$i]->id)->exists()){
+                $view =  $TV::where('boxes_id', '=', $TB[$i]->id)->first();
+                $view_count = $view->view_count;
+                $view_count += 1;
+                $view->view_count = $view_count;
+                $view->save();
+            }else{
+                $TV->boxes_id =  $TB[$i]->id;
+                $TV->view_count = 1;
+                $TV->save();
+            }
             $text = $text . "<li class='related__item'>";
             $text = $text . "<img src='http://localhost/tag/" . $TB[$i]->id . "/trigger' style='display:none' >";
             $text = $text . "<div id='grid_img'>";

@@ -11,7 +11,7 @@ window.onload = function(){
                 list-style-type: none;
                 width 100%;
                 display: grid;
-                grid-template-rows: 100px 50px;
+                grid-template-rows: 50px 100px;
                 grid-template-columns: 150px 1fr;
                 margin-bottom 30px:
             }
@@ -22,7 +22,7 @@ window.onload = function(){
             }
             #grid_h3{
                 color: green;
-                grid-row: 1 / 2;
+                grid-row: 1 / 4;
                 grid-column: 2 / 3;
                 background-color: #8f8;
             }
